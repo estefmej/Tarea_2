@@ -3,7 +3,7 @@
 **Pregunta:** ¿qué tan bien convierten los modelos abiertos (OCR, ASR y un LLM local) documentos y audios
 peruanos en datos estructurados confiables, y dónde fallan?
 
-**Dashboard público:** [completar con el enlace de share.streamlit.io]
+**Dashboard público:** https://tarea2-ocr-asr.streamlit.app
 
 Pipeline de extracción (OCR + ASR), evaluación con referencias manuales (CER/WER), comparación de modelos y
 extracción estructurada con un LLM local, sobre un corpus peruano de documentos y audios.
@@ -48,6 +48,12 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+Contenido del dashboard: indicadores clave (documentos procesados, minutos de audio, CER y WER por modelo y
+concordancia del LLM con la auditoría humana), búsqueda de palabras en los textos OCR y ASR, filtros por tipo de
+documento, modelo, condición y duración del audio, cuatro gráficos interactivos de Plotly, tablas descargables en
+CSV, un explorador de documentos (texto OCR, campos del LLM, referencia y CER de cada modelo) y un explorador de
+audios (transcripción con marcas de hablante, campos del LLM y comparación de WER entre modelos).
+
 El dashboard no ejecuta OCR, ASR ni LLM: muestra los resultados precalculados en `datos/*.csv`. Las imágenes y
 audios solo se muestran si están en `datos/ejemplos/` con permiso de redistribución y sin datos personales; el
 resto se consulta como texto y metadatos.
@@ -87,20 +93,26 @@ nombres reales reemplazados por `PERSONA_1` antes de calcular CER/WER.
 
 ### Resultados
 
+
 | Modalidad | Modelo | Error medio | RTF medio |
 |---|---|---|---|
-| Documento | PaddleOCR 3.7 PP-OCRv6 (config. Parte 1, engine transformers, CPU) | CER = [completar] | – |
-| Documento | Tesseract 5.5 (spa, psm 3) | CER = [completar] | – |
+| Documento | PaddleOCR 3.7 PP-OCRv6 (config. Parte 1, engine transformers, CPU) | CER = 0.312 | – (2.8 s/doc) |
+| Documento | Tesseract 5.5 (spa, psm 3) | CER = 0.534 | – (1.1 s/doc) |
 | Audio | faster-whisper small (CPU, int8) – línea base | WER = 0.088 | 0.13 |
-| Audio | wav2vec2-large-xlsr-53-spanish | WER = 0.261 | 0.29 |
+| Audio | wav2vec2-large-xlsr-53-spanish | WER = 0.261 | 0.31 |
 
 **Decisión.** Para audio elegiría **faster-whisper small**: menor WER, unas 7 veces más rápido que tiempo real
 en CPU, y añade puntuación y mayúsculas. wav2vec2 (CTC, sin modelo de lenguaje) une palabras ("corazónconoces")
-y falla más con nombres propios. Para documentos: [completar con el modelo de menor CER y su costo/latencia].
+y falla más con nombres propios. Para documentos elegiría **PaddleOCR**: menor CER en los tres tipos (foto 0.31,
+impreso 0.45, manuscrito 0.07), a cambio de ser unas 2.6 veces más lento que Tesseract (2.8 s frente a 1.1 s por documento).
 
 **Casos difíciles.** El peor clip fue clip_003 (entrevista con varios hablantes): WER 0.27 con Whisper y 0.70
-con wav2vec2, por el cambio de hablante y los nombres propios. En documentos: [completar: peor tipo, por
-ejemplo el manuscrito doc_022, y la causa].
+con wav2vec2, por el cambio de hablante y los nombres propios. En documentos, el peor tipo fueron los **impresos**
+(CER 0.45 y 0.68): periódicos del siglo XIX con tipografía antigua y columnas mezcladas, y billetes con fuentes
+decorativas. El peor caso individual fue **doc_007** (foto de la placa "Calle Espaderos"): PaddleOCR leyó las dos
+palabras en orden inverso (CER 0.80) y Tesseract no detectó texto (CER 1.0); el CER penaliza el orden de lectura
+además del reconocimiento. En el manuscrito (doc_022) solo se evaluó el título, con letra grande: PaddleOCR lo leyó casi completo
+(CER 0.07) y Tesseract no (0.62); el cuerpo del manuscrito no se evaluó.
 
 ### Extracción con LLM y auditoría
 
@@ -109,8 +121,11 @@ siempre; en documentos `emisor`, `fecha` y `monto` solo si aparecen; en audios `
 `citas_clave` si se pueden sustentar; `null` para datos ausentes. El código descarta cualquier campo no
 permitido.
 
-Auditoría humana de 20 extracciones al azar (10 documentos + 10 audios): **[X]/20 completamente correctas**.
-Errores típicos: [completar].
+Auditoría humana de 20 extracciones al azar (10 documentos + 10 audios): **7/20 completamente correctas (35 %)**,
+3/10 en documentos y 4/10 en audios. Criterio: `numero_hablantes` en null no se penaliza, pero sí un número inventado,
+igual que omitir emisor, fecha o monto cuando aparecen literalmente. Errores típicos: omite campos presentes
+("Municipalidad de Lima", "El Comercio", "Banco del Perú"), alucina contenido cuando el OCR es ilegible
+(manuscritos doc_021 y doc_028), confunde entrevistador y entrevistado, e inventa `numero_hablantes`.
 
 ## Hallazgos principales
 
@@ -123,17 +138,20 @@ Errores típicos: [completar].
 
 ## Privacidad y ética
 
-- Los nombres reales detectados se seudonimizan (`PERSONA_1`) en CSV, métricas y salidas. También se aplica a
-  las variantes mal transcritas por los ASR.
+- Los nombres reales detectados se seudonimizan (`PERSONA_1`, `PERSONA_2`, ...) en CSV, métricas, extracciones del
+  LLM y salidas, incluidos entrevistados, personas históricas y las variantes mal transcritas por los ASR.
 - Antes de publicar se eliminaron del notebook las salidas con audio incrustado y la lista de nombres
   candidatos de la Parte 1.
-- No se versionan audios originales ni pesos de modelos (`.gitignore`).
+- No se versionan audios originales ni pesos de modelos (`.gitignore`). El dashboard solo muestra imágenes o
+  audios con permiso de redistribución y sin datos personales; las entrevistas se consultan únicamente como texto.
 
 ## Limitaciones
 
 - Fragmentos de 15 s por clip: con 30 a 40 palabras por clip, un par de errores mueve mucho el WER.
 - El corpus de audio es casi todo "limpio" (9 de 10 clips de la muestra); no incluye ruido ni música, así que
   el análisis de casos difíciles en audio se limita a varios hablantes.
+- Muestras pequeñas: 10 casos por modalidad y un solo manuscrito (evaluado solo en su título), así que las cifras
+  por grupo son orientativas.
 - Las cifras escritas con números frente a palabras ("70" / "setenta") cuentan como error.
 - La seudonimización se aplica antes del WER, así que un nombre mal reconocido no se cuenta como error.
 
