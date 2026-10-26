@@ -87,6 +87,8 @@ if rango:
     mask_aud &= aud["duracion_seg"].between(*rango)
 aud_f = aud[mask_aud] if len(aud) else aud
 res_f = res[res["modelo"].isin(sel_modelos)] if len(res) else res
+if len(res_f):   # los gráficos de error también respetan la búsqueda, el tipo y los filtros de audio
+    res_f = res_f[res_f["id"].isin(set(docs_f["id"]) | set(aud_f["id"]))]
 
 # ---------------- Indicadores ----------------
 c1, c2, c3 = st.columns(3)
