@@ -457,7 +457,7 @@ DIRECTOR
 PRESIDENTE
 DERENTE GENERAL
 HIPOLITO UNANUE
-A4293956G","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea off)",
+A4293956G","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea off)",BANCO CENTRAL DE RESERVA DEL PERÚ A4293956G 5 DE ENERO DE 1990 1000000 UN MILLON DE INTIS A4293956G HIPOLITO UNANUE 1 000 000
 doc_018,datos/raw/documentos/doc_018.jpeg,impreso,Wikimedia Commons (Public domain),"1857-1957
 PRIMER SELLO
 P
@@ -475,7 +475,7 @@ PERU
 15
 AEREO
 15
-CENTAVOS","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea off)",
+CENTAVOS","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea off)",1857 – 1957 CENTENARIO DEL PRIMER SELLO POSTAL PERUANO SELLO DE ENSAYO DICIEMBRE 1° DE 1857 PERU AEREO 15 CENTAVOS 15 P. S. N. C. 1 OZ 2RLS
 doc_001,datos/raw/documentos/doc_001.jpg,foto,Wikimedia Commons (CC0),"Horarios de Atención
 Teléfonos de emergencia:
 Leyenda
@@ -523,7 +523,7 @@ Lun- Vie 05:00-24:00/ Dom
 Lun- Dom 09:00-18:00
 06:00-22:00
 MUNICIPALIDAD DE
-LIMA","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+LIMA","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",Horarios de Atención Museo de Arte y Tradiciones Peruanas Lun-Vi 9:00 – 18:00 Museo Naval – Casa Grau Mar-Dom 9:00 – 14:30 Centro Cultural UNMSM Lun-Vie 9:00- 17:00 Iglesia y Monasterio de Jesús María y José Lun-Dom 09:00- 12:00/ 15:00- 17:00 Centro Cultural de la Beneficencia Lun-Dom 10:00- 19:00 Museo Andrés del Castillo Lun- Dom 09:00 18:00
 doc_002,datos/raw/documentos/doc_002.jpg,foto,Wikimedia Commons (CC BY-SA 4.0),"TEMPLO DEL SOL
 batrb
 Lo monumentalidad del Templo del Sol, denominado
@@ -546,30 +546,30 @@ dominio incaico.
 CONSTRUCTIVA
 1 Construcción de muro con piedras y adobes.
 2 Enlucido de barro.
-3Aandpmedo.","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+3Aandpmedo.","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)","TEMPLO DEL SOL La monumentalidad del Templo del Sol, denominado tempranamente “Punchao Cancha” o “Recinto del día”, constituye la mayor evidencia de la trascendental presencia Inca en Pachacamac, por ello los trabajos que se realizan actualmente en este edificio tienen como objetivo determinar las características arquitectónicas así como las secuencias constructiva y ocupacional del frente norte y este del Templo del Sol, habilitando las áreas para su intervención con fines de conservación."
 doc_003,datos/raw/documentos/doc_003.jpg,foto,Wikimedia Commons (CC BY-SA 2.0),"NE COLON
 BOLETERIA
-PLATEA ALTA","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+PLATEA ALTA","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",CINE COLON BOLETERIA PLATEA ALTA
 doc_004,datos/raw/documentos/doc_004.jpg,foto,Wikimedia Commons (CC BY-SA 4.0),"RN
 AYACJCIO
 CUADRAS
 ANTES LLAMADA CALLE DE LA PILETA DE SANTA ROSA
 POR LA PILA PÚBLICA UBICADA EN EL COSTADO
-DEL MONASTERIO DE SANTA ROSA DE LAS MONJAS","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+DEL MONASTERIO DE SANTA ROSA DE LAS MONJAS","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",JIRÓN AYACUCHO CUADRA 5 ANTES LLAMADA CALLE DE LA PILETA DE SANTA ROSA POR LA PILA PÚBLICA UBICADA EN EL COSTADO DEL MONASTERIO DE SANTA ROSA DE LAS MOJAS
 doc_005,datos/raw/documentos/doc_005.jpg,foto,Wikimedia Commons (CC BY-SA 4.0),"R
 HUAIIAGA
 CUAR8
 ANTIGUAMENTE LLAMADA CALLE DE SAN ANDRÉS POR
-ENCONTRARSE EN ELLA EL HOSPITAL DEL MISMO NOMBRE","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+ENCONTRARSE EN ELLA EL HOSPITAL DEL MISMO NOMBRE","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",JIRÓN HUALLAGA CUADRA 8 ANTIGUAMENTE LLAMADA CALLE DE SAN ANDRÉS POR ENCONTRARSE EN EL EL HOSPITAL DEL MISMO NOMBRE
 doc_006,datos/raw/documentos/doc_006.jpg,foto,Wikimedia Commons (CC BY-SA 4.0),"IR
 HIJANIA
 CADRA7
 TOMÓ EL NOMBRE DE CALLE DE SANTA ANA POR UBICARSE
-EN ELLA EL HOSPITAL E IGLESIA PARROQUIAL DE SANTA","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+EN ELLA EL HOSPITAL E IGLESIA PARROQUIAL DE SANTA","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",JIRÓN HUANTA CUADRA 7 TOMÓ EL NOMBRE DE CALLE DE SANTA ANA POR UBICARSE EN ELLA EL HOSPITAL E IGLESIA PARROQUIAL DE SANTA ANA
 doc_007,datos/raw/documentos/doc_007.jpg,foto,Wikimedia Commons (CC BY-SA 4.0),"Espaderos
-Calle","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+Calle","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",CALLE ESPADEROS
 doc_008,datos/raw/documentos/doc_008.jpg,foto,Wikimedia Commons (CC BY-SA 4.0),"Plazoleta Santa Catalina
-ia peatonal","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",
+ia peatonal","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea on)",PLAZOLETA SANTA CATALINA
 doc_021,datos/raw/documentos/doc_021.jpg,manuscrito,Wikimedia Commons (CC BY-SA 3.0),"51
 Idta general d Reymo
 del Peris
@@ -640,7 +640,7 @@ redas ln Remar Elenar
 2ª Sarte dele Pece, y avit
 S.
 G
-UGR Biblioteca Universitaria","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea off)",
+UGR Biblioteca Universitaria","PaddleOCR 3.7.0 PP-OCRv6 medium (lang=es, engine=transformers, cpu, ≤1600 px, orientación de línea off)",Yndice De los capítulos que se contienen en esta Relación de Gobierno
 doc_023,datos/raw/documentos/doc_023.jpg,manuscrito,Wikimedia Commons (Public domain),"Nn que quas caxynoa, lesa lra puerto, en me de.
 y criatumas, mar al tos, como ales hombres
 dondterta ba latmajen del hazer, ko como
